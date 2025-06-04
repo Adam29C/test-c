@@ -182,7 +182,7 @@ const MessageSend = ({ setfirst }) => {
     <>
       <form onSubmit={handleSendMessage}>
         <div
-          className={`  h-[10vh] w-full flex justify-center items-center ${darkMode ? 'bg-slate-900' : 'bg-gray-200'}  `}
+          className={`h-[10vh] w-full flex justify-center items-center ${darkMode ? 'bg-slate-900' : 'bg-gray-200'}  `}
           ref={modalRef}
         >
           {isPickerVisible && (
@@ -235,7 +235,11 @@ const MessageSend = ({ setfirst }) => {
                 </div> */}
 
                 <div className="dropdown">
-                  <div tabIndex={0} role="span" className="bg-transparent px-6 m-1">
+                  <div
+                    tabIndex={0}
+                    role="span"
+                    className="bg-transparent px-6 m-1"
+                  >
                     <FaPlus className="text-2xl" />
                   </div>
                   <ul

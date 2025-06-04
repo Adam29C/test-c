@@ -17,7 +17,7 @@ import DialogBox from '../../HelpersComponents/DialogBox';
 import {
   FOR_GET_LIST,
   FOR_POST_REQUEST,
-  FOR_UPDATE_REQUEST
+  FOR_UPDATE_REQUEST,
 } from '../../../services/common.service';
 import { apiRoutes } from '../../../utils/apiRoutes';
 import toast from 'react-hot-toast';
@@ -250,8 +250,8 @@ const ChatUser = ({ abcd }) => {
           >
             <IoMdArrowBack />
           </button>
-          <div
-            className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-center  px-2 py-1 items-center space-x-3  ${darkMode ? 'bg-slate-900 hover:bg-slate-800' : 'bg-gray-100 hover:bg-gray-200 '} rounded-md `}
+          {/* <div
+            className={`w-[100%] md:w-[90%] lg:w-[100%] h-[80%] mx-3 flex justify-center  px-2 py-1 items-center space-x-3 space-y-1  ${darkMode ? 'bg-slate-900 hover:bg-slate-800' : 'bg-gray-100 hover:bg-gray-200 '} rounded-md `}
           >
             <div className={`avatar  hidden  sm:block`}>
               <div className="w-12 rounded-full profile-img  ">
@@ -264,17 +264,47 @@ const ChatUser = ({ abcd }) => {
             </div>
             <div>
               <h1 className="text- add-point-btn1">{selectedUser.userName}</h1>
-              <span className="text- font-sizes m-0">
+              <span className="text- font-sizes m-0 -mb-2">
                 {selectedUser.mobile}
               </span>
 
               <br />
               <span
-                className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} font-sizes`}
+                className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} font-sizes -mt-2`}
               >
                 Last Seen -{' '}
                 {Get_Year_With_Time_With_Column_Saprate(selectedUser.lastSeen)}
               </span>
+            </div>
+          </div> */}
+          <div
+            className={`w-full md:w-[90%] lg:w-full mx-3 flex items-center px-4 py-3 rounded-md transition-all duration-200`}
+          >
+            {/* Avatar */}
+            <div className="hidden sm:block">
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-300">
+                <img
+                  src="./images/default_profile.png"
+                  alt="profile"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+
+            {/* User Info */}
+            <div className="ml-4">
+              <h1 className="text-base font-semibold leading-snug add-point-btn1">
+                {selectedUser.userName}
+              </h1>
+              <p className="text-sm font-sizes text-black ">
+                {selectedUser.mobile}
+              </p>
+              <p
+                className={`text-sm font-sizes ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}
+              >
+                Last Seen -{' '}
+                {Get_Year_With_Time_With_Column_Saprate(selectedUser.lastSeen)}
+              </p>
             </div>
           </div>
         </div>
